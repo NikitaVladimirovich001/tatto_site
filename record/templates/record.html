@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'record/css/record.css' %}">
+    <title>Запись</title>
+</head>
+<body>
+
+    <section>
+        <img src="{% static '/img/wallpaperflare.com_wallpaper.jpg' %}" alt="" class="fon_1">
+        <div class="form-box">
+            <div class="form-value">
+                <form class="form_contact contact_form" action="" method="post" id="contact_form">
+
+                    <h2>Записаться к мастеру</h2>
+
+<!--                    {{form}}-->
+<!--                    {%csrf_token%}-->
+
+                   <div class="inputbox">
+                       {{ form.name }}
+                        <ion-icon name='person'></ion-icon>
+                        <label for="">Ваше имя</label>
+                    </div>
+
+                    <div class="inputbox">
+                        {{ form.nomer }}
+                        <ion-icon name='call-outline'></ion-icon>
+                        <input type="tel" required>
+                        <label for="">Ваш телефон</label>
+                    </div>
+
+                    <div class="inputbox">
+                        {{ form.email }}
+                        <ion-icon name="mail-outline"></ion-icon>
+                        <input type="email" required>
+                        <label for="">Email</label>
+                    </div>
+
+                    <div class="inputbox">
+                        {{ form.date }}
+                        <ion-icon name='calendar-clear-outline'></ion-icon>
+                        <input type="date" id="start" name="trip-start"
+                        value="2018-07-22"
+                        min="2018-01-01" max="2023-13-05">
+                        <label for="">Дата</label>
+                    </div>
+
+                    <div class="inputbox">
+                        {{ form.time }}
+                        <ion-icon name='alarm-outline'></ion-icon>
+                        <input type="time" name="appt"
+                        min="09:00" max="18:00" onfocus="hideTT(this);"
+                        onblur="chkTT(this);" required>
+                        <label for="">Время</label>
+                    </div>
+
+                    <button>Запись</button>
+
+                </form>
+            </div>
+        </div>
+    </section>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

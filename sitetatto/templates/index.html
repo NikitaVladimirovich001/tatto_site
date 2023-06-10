@@ -1,0 +1,275 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="{% static 'sitetatto/js/lightbox-plus-jquery.min.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'sitetatto/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'sitetatto/css/media.css' %}">
+    <link rel="stylesheet" href="{% static 'sitetatto/css/lightbox.min.css' %}">
+    <title>Тату студия Диониса Пахомова</title>
+</head>
+<body>
+    <img src="{% static 'sitetatto/img/fon_baner_1.jpg' %}" alt="" class="fon_1">
+    <header class="header"> <!--Банер 1-->
+            <div class="container">
+                <div class="header__iner">
+                    <img src="{% static 'sitetatto/img/Logo.png' %}" alt="" class="logo"> <!--Логотип-->
+                    <nav class="nav"> <!--Навигация-->
+                        <a class="nav_link" href="">Главная</a>
+                        <a class="nav_link" href="#baner_2">Услуги</a>
+                        <a class="nav_link" href="#baner_3">Галерея</a>
+                        <a class="nav_link" href="#baner_4">Мастера</a>
+                        <a class="nav_link" href="#baner_5">Отзывы</a>
+                    </nav>
+                </div>
+                <div class="information_baner_1"> <!--Информация банер 1-->
+                    <div class="ver_information_baner">
+                        <img src="{% static 'sitetatto/img/strelka.png' %}" alt="" class="strelrka">
+                        <p class="glav_text_baner_1">Консультация в салоне<br>
+                            Бесплатная!
+                        </p>
+                        <p class="zapis_baner_1">запишись на консультацию и получи скидку</p>
+                        <a href="{% url 'record' %}" class="knopka_zapis ">Записаться</a>
+                    </div>
+                    <!-- Нижняя информация -->
+                    <div class="dop_information">
+
+                        <div class="dop_information_1">
+                            <p class="glav_text_dop_information_1">Довольные клиенты</p>
+                            <div class="figyr_1"></div>
+                            <p class="osnovv_tex_1">
+                                Более 10000 клиентов рекомендуют наш тату<br>
+                                салон своим друзьям.
+                            </p>
+                        </div>
+                        <div class="dop_information_2">
+                            <p class="glav_text_dop_information_1">Безопасность Здоровья</p>
+                            <div class="figyr_2"></div>
+                            <p class="osnovv_tex_1">
+                                Только одноразовые инструменты, абсолютно<br>
+                                стерильное помещение + специалисты c<br>
+                                медицинским образованием.
+                            </p>
+                        </div>
+                        <div class="dop_information_3">
+                            <p class="glav_text_dop_information_1">Качество татуировки</p>
+                            <div class="figyr_3"></div>
+                            <p class="osnovv_tex_1">
+                                Только мастера с художественным<br>
+                                образованием - эскиз любой сложности.<br>
+                                Сделать татуировку вы сможете в этот же<br>
+                                или в другой день.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Соц сети -->
+                    <div class="vk_telegram">
+                        <a href="https://vk.com/dionis_art"><img src="{% static 'sitetatto/img/vk.png' %}" alt="" class="vk"></a>
+                        <a href="https://telegram.org/"><img src="{% static 'sitetatto/img/telegram.png' %}" alt="" class="telegram"></a>
+                    </div>
+                </div>
+            </div>
+    </header>
+    <!-- Банер 2 -->
+        <img src="{% static 'sitetatto/img/fon_baner_2.png' %}" alt="" class="fon_2">
+        <div class="container">
+            <div id="baner_2"></div>
+                <p class="zag_baner_2">
+                    УСЛУГИ
+                </p>
+                <div class="sod_baner_2">
+                    <div class="sod_baner_2_1">
+                        <a href="tattoo.html" class="knopka_baner_2_1">
+                            <img src="{% static 'sitetatto/img/tatto.png' %}" alt="" class="hover_el_1">
+                            <p class="text_baner_2_1">
+                                Татуировки
+                            </p>
+                        </a>
+                    </div>
+                    <div class="sod_baner_2_2">
+                        <a href="correction.html" class="knopka_baner_2_2">
+                            <img src="{% static 'sitetatto/img/risunk.png' %}" alt="" class="hover_el_2">
+                            <p class="text_baner_2_2">
+                                Исправление
+                            </p>
+                        </a>
+                    </div>
+                        <div class="sod_baner_2_3">
+                            <a href="removal.html" class="knopka_baner_2_3">
+                                <img src="{% static 'sitetatto/img/del.png' %}" alt="" class="hover_el_3">
+                                <p class="text_baner_2_3">
+                                    Удаление
+                                </p>
+                            </a>
+                        </div>
+                </div>
+        </div>
+
+    <!-- Банер 3 -->
+    <div id="baner_3">
+        <div class="fon_baner_3">
+            <div class="zag_baner_3">Галерея</div>
+            <div class="container">
+                <div class="block_nav">
+                    <div class="blok_nav_and_gal">
+                        <div class="content_nav_baner_3">
+                            <div class="verx_nav">
+                                <div class="filtr">
+                                    <div class="left_filter">
+                                        <p class="fill">Фильтр</p>
+                                        <img src="{% static 'sitetatto/img/strelka_baner_3.png' %}" alt="" class="strelka_ver">
+                                    </div>
+                                </div>
+                                <div class="zagolovok_filtr">
+                                    <p class="zag_masera">Мастера</p>
+                                </div>
+                            </div>
+                            <form class="position-absolute" style="z-index: -1; float: right;">
+                                {% csrf_token %}
+                                {{ form.aps }}
+                            <input type="submit" value="Выбрать">
+                            </form>
+                            <div class="niz_filter">
+                                {% for image in image_list %}
+                                    <a class="niz_f" href="">{{ painter.name }}</a>
+                                {% endfor %}
+                            </div>
+                        </div>
+<!--                        <div class="pr">-->
+<!--                            <div class="galer_ban_3">-->
+<!--                                <div class="block_gal_1">-->
+<!--                                    <a href="{% static 'sitetatto/img/1.jpg' %}" data-lightbox="lbox">-->
+<!--                                        <img src="{% static 'sitetatto/img/1.jpg' %}" alt="" class="img_1_gal">-->
+<!--                                    </a>-->
+<!--                                    <a href="{% static 'sitetatto/img/2.jpg' %}" data-lightbox="lbox">-->
+<!--                                        <img src="{% static 'sitetatto/img/2.jpg' %}" alt="" class="img_1_gal">-->
+<!--                                    </a>-->
+<!--                                    <a href="{% static 'sitetatto/img/3.jpg' %}" data-lightbox="lbox">-->
+<!--                                        <img src="{% static 'sitetatto/img/3.jpg' %}" alt="" class="img_1_gal">-->
+<!--                                    </a>-->
+<!--                                </div>-->
+<!--                                <div class="block_gal_2">-->
+<!--                                    <a href="{% static 'sitetatto/img/4.jpg' %}" data-lightbox="lbox">-->
+<!--                                        <img src="{% static 'sitetatto/img/4.jpg' %}" alt="" class="img_1_gal">-->
+<!--                                    </a>-->
+<!--                                    <a href="{% static 'sitetatto/img/5.jpg' %}" data-lightbox="lbox">-->
+<!--                                        <img src="{% static 'sitetatto/img/5.jpg' %}" alt="" class="img_1_gal">-->
+<!--                                    </a>-->
+<!--                                    <a href="{% static 'sitetatto/img/6.jpg' %}" data-lightbox="lbox">-->
+<!--                                        <img src="{% static 'sitetatto/img/6.jpg' %}" alt="" class="img_1_gal">-->
+<!--                                    </a>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        <img src="{% static 'sitetatto/img/list.png' %}" alt="" class="list">-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   <!-- Банер 4 -->
+    <div id="baner_4">
+        <img src="{% static 'sitetatto/img/fon_baner_4.png' %}" alt="" class="fon_4">
+        <div class="container">
+            <p class="zag_baner_4">
+                Мастера
+            </p>
+            <div class="sod_baner_4">
+                <div class="sod_baner_4_1">
+                    {% for image in image_list %}
+                        <a href="Danil.html" class="knopka_baner_4_1">
+                            <img src="{{image.image.url}}" alt="" class="hover_el_4_1">
+                            <p class="text_baner_4_1">{{ painter.name }}</p>
+                        </a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Банер 5 -->
+    <div id="baner_5">
+        <div class="fon_baner_left_5">
+            <img src="{% static 'sitetatto/img/imf_gal.jpg' %}" alt="" class="fon_prav_5">
+            <div class="container">
+                <p class="center_text_baner_5">
+                    Отзывы
+                </p>
+                <div class="left_content_glav">
+                    <div class="lef_kont">
+                        <a href="" class="knfopka_foto_master_baner_5">
+                            <p class="foto_master_baner_5">
+                                Фото с мастером
+                            </p>
+                        </a>
+                        <a href="" class="knfopka_foto_rabot_baner_5">
+                            <p class="foto_rabot_baner_5">
+                                Фото работы
+                            </p>
+                        </a>
+                    </div>
+                    <div class="border">
+                        <p class="content_border">Потрясающая отмосфера что не хочется<br>
+                            уходить! Приветливый персонал и мастера<br>
+                            настоящие профессионалы.
+                        </p>
+                        <p class="content_border_name">
+                            Мария
+                        </p>
+                    </div>
+                    <div class="blok_knopka_otz">
+                        <a href="" class="knopka_otz">Оставить отзыв</a>
+                        <a class="knopka_otz_niz_text">< 14/15 ></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer -->
+    <div class="footer">
+        <div class="fon_footer">
+            <div class="container">
+                <div class="element">
+                    <div class="lev_element">
+                        <div class="info_geolocation_nomer">
+                            <div class="nomer">
+                                <img src="{% static 'sitetatto/img/nomer.png' %}" alt="" class="nom">
+                                <p class="text_nomer">+ 7 (963) 863 50 50 </p>
+                            </div>
+                            <div class="geolocaton">
+                                <img src="{% static 'sitetatto/img/geolocaton.png' %}" alt="" class="gel">
+                                <p class="text_geolocation">Курган, ул Коли Мяготина, 56 А</p>
+                            </div>
+                        </div>
+                        <div class="vk_telegram_2">
+                            <a href="https://vk.com/dionis_art"><img src="{% static 'sitetatto/img/vk.png' %}" alt="" class="vk_2"></a>
+                            <a href="https://telegram.org/"><img src="{% static 'sitetatto/img/telegram.png' %}" alt="" class="telegram_2"></a>
+                        </div>
+                    </div>
+                    <div class="prav_element">
+                        <p class="prav_text_1">
+                            © Все права защищены, “Тату-студия Диониса Пахомова”2022
+                        </p>
+                        <div class="prav_niz">
+                            <a href="" class="knopka_prav_text_3">
+                                <p class="prav_text_3">
+                                    Запись онлайн
+                                </p>
+                            </a>
+                            <a href="" class="knopka_prav_text_2">
+                                <p class="prav_text_2">
+                                    Цена онлайн
+                                </p>
+                            </a>
+                        </div>
+                        <img src="{% static 'sitetatto/img/vom_plus.png' %}" alt="" class="img_niz">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

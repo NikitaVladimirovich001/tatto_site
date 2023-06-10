@@ -1,0 +1,871 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    font-family: "Myriad Pro";
+    font-size: 15 px;
+    line-height: 2.84;
+    color: white;
+}
+
+.html {
+    scroll-behavior: auto;
+    scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5 {
+    margin: 0;
+}
+
+ /* Контейнер */
+.container {
+    width: 100%;
+    max-width: 1820px;
+    margin: 0 auto;
+}
+
+/* Фон 1 */
+.fon_1 {
+    margin-top: -17px;
+}
+
+/* Шапка */
+.header {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.header__iner {
+    padding-top: 30px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+
+/* Навигация */
+.nav {
+    font-size: 25px;
+
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 51px;
+}
+
+.nav_link {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 35px;
+    position: relative;
+
+    color: white;
+    text-decoration: none;
+
+    transition: color .2 linear;
+}
+
+/* Подчеркивание */
+.nav_link:after {
+    content: "";
+    display: block;
+    width: 120%;
+    height: 4px;
+    opacity: 0;
+
+    background-color: #e57025;
+    border-radius: 1.5px;
+    position: absolute;
+    top: 85%;
+    left: -6px;
+    z-index: 1;
+
+    transition: opacity 0.5s linear;
+}
+
+.nav_link:hover:after {
+    opacity: 1;
+}
+
+.nav_link:after {
+    border-color: white;
+    box-shadow: 0px, 0px,45px, white;
+}
+
+.strelrka {
+    margin-top: 34px;
+
+}
+
+/*Информация банер_1*/
+.information_baner_1 {
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column ;
+    justify-content: center;
+}
+
+.ver_information_baner {
+    text-align: center;
+}
+
+.strelrka {
+    margin-top: -2px;
+}
+
+
+.glav_text_baner_1 {
+    font-size: 50px;
+    font-weight: 700;
+    text-align: center;
+    line-height: 1.1;
+    font-weight: lighter;
+}
+
+.zapis_baner_1 {
+    font-size: 24px;
+    font-weight: 350;
+    text-align: center;
+    margin: 1px auto;
+}
+
+/* Кнопка записи */
+.knopka_zapis {
+    display: inline-block;
+    vertical-align: top;
+    padding: 1px 59px;
+
+    border: 3px solid #fff;
+
+    color: #fff;
+    font-size: 15px;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 50px;
+
+    transition: background .1s
+    linear, color .1s linear;
+}
+
+.knopka_zapis:hover {
+    background-color: #fff;
+    color: #333;
+}
+
+/* Нижняя информация 1 банера */
+.figyr_1 {
+    width: 134px;
+    height: 5px;
+    border-radius: 50px;
+    background: #e57025;
+    margin-top: -7px
+}
+
+.figyr_2 {
+    width: 134px;
+    height: 5px;
+    border-radius: 50px;
+    background: #e57025;
+    margin-top: -7px;
+    margin-left: 148px;
+}
+
+.figyr_3 {
+    width: 134px;
+    height: 5px;
+    border-radius: 50px;
+    background: #e57025;
+    margin-top: -7px;
+    margin-left: 130px;
+}
+
+.dop_information_1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.osnovv_tex_1 {
+    font-size: 22px;
+    text-align: center;
+    line-height: 1.2;
+    margin-top: 20px;
+}
+
+.glav_text_dop_information_1 {
+    font-size: 30px;
+    color: white;
+    font-family: 'Microsoft JhengHei';
+    text-transform: uppercase;
+    font-weight: lighter;
+    margin-top: -10px;
+    text-align: center;
+
+}
+
+.dop_information_2 {
+    margin-top: 17px;
+}
+
+.dop_information_3 {
+    margin-top: 31px;
+}
+
+.dop_information {
+    display: flex;
+}
+
+.dop_information {
+    margin-top: 10px;
+    margin: 66px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* соц сети */
+.vk_telegram {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: -59px;
+}
+
+.vk {
+    width: 70px;
+    margin-right: -22px;
+}
+
+.telegram {
+    width: 70px;
+    height: 70px;
+}
+
+/* Банер_2 */
+.fon_2 {
+    margin-top: -17px;
+}
+
+.zag_baner_2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 41px;
+    color: white;
+    font-family: 'Microsoft JhengHei';
+    text-transform: uppercase;
+    font-weight: lighter;
+
+    margin-top: -816px;
+}
+
+.sod_baner_2 {
+    margin: 185px;
+    margin-top: 152px;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 199px;
+}
+
+.hover_el_1 {
+    width: 258px;
+}
+
+.text_baner_2_1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: -10px;
+    font-size: 38px;
+    color: #9c9b9f;
+    font-family: 'Microsoft JhengHei';
+    font-weight: lighter;
+    transition: color 0.2s linear;
+}
+
+.text_baner_2_1:hover {
+    color:#e57025
+}
+
+.knopka_baner_2_1 {
+    text-decoration: none;
+}
+
+.hover_el_2 {
+    width: 258px;
+}
+
+.text_baner_2_2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: -10px;
+    font-size: 38px;
+    color: #9c9b9f;
+    font-family: 'Microsoft JhengHei';
+    font-weight: lighter;
+
+    transition: color 0.2s linear;
+}
+
+.knopka_baner_2_2 {
+    text-decoration: none;
+}
+
+.text_baner_2_2:hover {
+    color:#e57025
+}
+
+.hover_el_3 {
+    width: 258px;
+    display: block;
+}
+
+.text_baner_2_3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: -10px;
+    font-size: 38px;
+    color: #9c9b9f;
+    font-family: 'Microsoft JhengHei';
+    font-weight: lighter;
+
+    transition: color 0.2s linear;
+}
+
+.knopka_baner_2_3 {
+    text-decoration: none;
+}
+
+.text_baner_2_3:hover {
+    color:#e57025
+}
+
+/* Банер 3 */
+.fon_baner_3 {
+    width: 1920px;
+    height: 1000px;
+    background-color: #18181d;
+    margin-top: -19px;
+}
+
+.zag_baner_3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 41px;
+    color: white;
+    font-family: 'Microsoft JhengHei';
+    text-transform: uppercase;
+    font-weight: lighter;
+}
+
+/* Навигация */
+.block_nav {
+    width: 350px;
+    height: 751px;
+    background-color: #000000;
+
+    border-radius: 10px;
+    margin-top: 36px;
+}
+
+.niz_f {
+    font-size: 28px;
+    color: #9c9b9f;
+    font-family: 'Microsoft JhengHei';
+
+    text-decoration: none;
+    line-height: 2.5;
+    transition: color 0.2s linear;
+}
+
+.niz_f:hover {
+    color: #e57025;
+}
+
+.niz_filter {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+}
+
+.fill {
+    font-size: 28px;
+    color: #9c9b9f;
+    font-family: 'Microsoft JhengHei';
+}
+
+.left_filter {
+    display: flex;
+}
+
+.zag_masera {
+    font-size: 30px;
+    font-family: 'Microsoft JhengHei';
+    color: #fff;
+    margin-top: -26px;
+    margin-left: 19px;
+}
+
+.strelka_ver {
+    width: 30px;
+    height: 31px;
+    margin-top: 25px;
+    margin-left: 62px;
+}
+
+.content_nav_baner_3 {
+    margin-top: 5px;
+    margin-left: 45px;
+}
+
+/* Галерея */
+.blok_nav_and_gal {
+    display: flex;
+}
+
+.img_1_gal {
+    width: 275px;
+    height: 309px;
+    padding: 32px;
+    padding-right: 57px;
+}
+
+.block_gal_1 {
+    display: flex;
+}
+
+.block_gal_2 {
+    display: flex;
+}
+
+.galer_ban_3 {
+    margin-top: -32px;
+    margin-left: 310px;
+}
+
+.pr {
+    display: flex;
+    flex-direction: column;
+}
+
+.list {
+    margin-top: -42px;
+    margin-left: 191px;
+}
+
+
+/* Банер 4 */
+.fon_4 {
+    margin-top: -20px;
+    font-size: 1920px;
+    width: 1920;
+    width: 1920px;
+    height: 802px;
+}
+
+.zag_baner_4 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 41px;
+    color: white;
+    font-family: 'Microsoft JhengHei';
+    text-transform: uppercase;
+    font-weight: lighter;
+
+    margin-top: -816px;
+}
+
+.sod_baner_4 {
+    margin: 185px;
+    margin-top: 152px;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 199px;
+}
+
+
+.sod_baner_4_1 {
+    display: flex;
+    justify-content: center;
+}
+
+.hover_el_4_1 {
+    width: 258px;
+}
+
+.text_baner_4_1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: -10px;
+    font-size: 38px;
+    color: #9c9b9f;
+    font-family: 'Microsoft JhengHei';
+    font-weight: lighter;
+    transition: color 0.2s linear;
+}
+
+.text_baner_4_1:hover {
+    color:#e57025
+}
+
+.knopka_baner_4_1 {
+    text-decoration: none;
+    display: inline-block;
+    padding-left: 2px;
+    padding-right: 332px;
+}
+
+/* 2 */
+.hover_el_4_2 {
+    width: 258px;
+}
+
+.text_baner_4_2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: -10px;
+    font-size: 38px;
+    color: #9c9b9f;
+    font-family: 'Microsoft JhengHei';
+    font-weight: lighter;
+
+    transition: color 0.2s linear;
+}
+
+.knopka_baner_4_2 {
+    text-decoration: none;
+}
+
+.text_baner_4_2:hover {
+    color:#e57025
+}
+
+/* 3 */
+.hover_el_4_3 {
+    width: 258px;
+    display: block;
+}
+
+.text_baner_4_3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: -10px;
+    font-size: 38px;
+    color: #9c9b9f;
+    font-family: 'Microsoft JhengHei';
+    font-weight: lighter;
+
+    transition: color 0.2s linear;
+}
+
+.knopka_baner_4_3 {
+    text-decoration: none;
+}
+
+.text_baner_4_3:hover {
+    color:#e57025
+}
+
+.knopka_otz {
+    display: inline-block;
+    vertical-align: top;
+    padding: 1px 59px;
+    border: 3px solid #fff;
+
+    color: #fff;
+    font-size: 15px;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 50px;
+
+    margin-top: 120px;;
+    margin-left: 218px;
+    text-align: center;
+
+    width: 111px;
+}
+
+.knopka_otz:hover {
+    background-color: #fff;
+    color: #333;
+}
+
+.blok_knopka_otz {
+    display: flex;
+    flex-direction: column;
+}
+
+.knopka_otz_niz_text {
+    color: #9c9b9f;
+    font-size: 24px;
+    text-decoration: none;
+    margin-left: 281px;
+    margin-top: -9px;
+}
+
+/* Банер 5 */
+.baner_5{
+    width: 1920px;
+    height: 900px;
+}
+
+.fon_baner_left_5 {
+    width: 1920px;
+    height: 864px;
+    background-color: #18181d;
+    margin-top: -29px;
+    margin-left: 0px;
+}
+
+.fon_prav_5 {
+    width: 991px;
+    height: 816px;
+    margin-left: 931px;
+    margin-top: 10px;
+}
+
+/* Заголовок */
+.center_text_baner_5{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 41px;
+    color: white;
+    font-family: 'Microsoft JhengHei';
+    text-transform: uppercase;
+    font-weight: lighter;
+    margin-top: -842px;
+}
+
+/* Фото с мастером и фото работы */
+.lef_kont {
+    display: flex;
+    align-items: center;
+}
+
+.foto_master_baner_5 {
+    font-size: 24px;
+    color: #9c9b9f;
+    font-family: 'Microsoft JhengHei';
+    transition: color 0.2s linear;
+}
+
+.foto_master_baner_5:hover {
+    color: #e57025;
+}
+
+.knfopka_foto_master_baner_5 {
+    text-decoration: none;
+}
+
+.foto_rabot_baner_5 {
+    font-size: 28px;
+    color: #9c9b9f;
+    font-family: 'Microsoft JhengHei';
+    margin-left: 66px;
+    transition: color 0.2s linear;
+}
+
+.foto_rabot_baner_5:hover {
+    color: #e57025;
+}
+
+.knfopka_foto_rabot_baner_5 {
+    text-decoration: none;
+}
+
+/* Границы */
+.border {
+    display: inline-block;
+    vertical-align: top;
+    padding: 1px 63px;
+    border: 3px solid #e57025;
+    color: #fff;
+    font-size: 15px;
+    text-decoration: none;
+    font-weight: 700;
+    width: 576px;
+    height: 226px;
+    margin-top: 81px;
+}
+
+.content_border  {
+    font-size: 24px;
+    line-height: 1.2;
+    color: #9c9b9f;
+    font-family: 'Microsoft JhengHei';
+    margin-top: 13px;
+}
+
+.content_border_name {
+    font-size: 28px;
+    line-height: 1.2;
+    color: #e57025;
+    font-family: 'Microsoft JhengHei';
+    margin-top: 56px;
+}
+
+.blok_knopka_otz {
+    display: flex;
+    flex-direction: column;
+    margin-left: -3px;
+}
+
+/* footer */
+.fon_footer {
+    width: 1920px;
+    height: 350px;
+
+    background-color: #050505;
+
+    margin-top:  -37px;
+}
+
+/*  геолокация */
+.gel {
+    width: 70px;
+}
+
+.text_geolocation {
+    font-size: 22px;
+    font-family: 'Microsoft JhengHei';
+    font-weight: lighter;
+}
+
+.geolocaton {
+    display: flex;
+    align-items: center;
+
+}
+
+.nomer {
+    display: flex;
+    align-items: center;
+    margin-top: -12px;
+    margin-left: 10px;
+}
+
+/* номер */
+.nom {
+    width: 60px;
+}
+
+.text_nomer {
+    font-size: 22px;
+    font-family: 'Microsoft JhengHei';
+    font-weight: lighter;
+}
+
+.info_geolocation_nomer {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+/* соц сети */
+.vk_telegram_2 {
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 18px;
+    margin-top: 36px;
+}
+
+
+.vk_2 {
+    width: 70px;
+    margin-right: -22px;
+}
+
+.telegram_2 {
+    width: 70px;
+    height: 70px;
+}
+
+.lev_element {
+    margin-top: 47px;
+}
+
+.prav_text_1 {
+    font-size: 20px;
+    color: #9c9b9f;
+    font-family: 'Microsoft JhengHei';
+    font-weight: lighter;
+    margin-left: 413px;
+}
+
+.knopka_prav_text_3 {
+    text-decoration: none;
+}
+
+
+.prav_text_2 {
+    font-size: 20px;
+    color: #e57025  ;
+    font-family: 'Microsoft JhengHei';
+    font-weight: lighter;
+
+    margin-left: 356px;
+}
+
+.knopka_prav_text_2 {
+    text-decoration: none;
+}
+
+.prav_niz {
+    display: flex;
+}
+
+.element {
+    display: flex;
+    justify-content: space-between;
+}
+
+.prav_element {
+    margin-top: 47px;
+    margin-left: -28px;
+
+}
+
+.prav_niz {
+    margin: 10px;
+}
+
+.prav_text_3 {
+    font-size: 20px;
+    color: #e57025  ;
+    font-family: 'Microsoft JhengHei';
+    font-weight: lighter;
+
+    margin-left: 406px;
+}
+
+.img_niz {
+    width: 126px;
+    margin-left: 910px;
+}
+
+
+
+
