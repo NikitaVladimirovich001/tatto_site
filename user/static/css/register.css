@@ -10,44 +10,37 @@ body{
 	padding: 0;
 }
 
-.header {
+.wrapper {
     width: 100%;
-    height: 70px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: auto;
+}
+
+.er {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.register {
+    width: 500px; 
+    height: 570px;
     background-color: #222222;
+    border-radius: 14px;
 }
 
-.logo {
-	width: 100px;
-    margin-top: 10px;
-    margin-left: 303px;
-}
-
-.h1_glav {
-    margin-top: 54px;
-    margin-left: 1211px;
-}
-
-h1{
-	color: rgb(255, 255, 255);
-	margin: 20px auto 0;
-	width: 200px;
-	text-align: center;
-}
-#wrapper{
-	position: absolute;
-    width: 320px;
-    left: 70%;
-    margin-left: -175px;
-    top: 29%;
-    margin-top: -75px;
-}
-
-/* === Sign in Form === */
 #signin {
-	height: 90px;
-	width: 300px;
-	border-radius: 8px;
-	position: relative;
+    margin-top: 32px;
+    margin-left: 97px;
+    height: 90px;
+    width: 300px;
+    border-radius: 8px;
+    position: relative;
 }
 
 #signin input:first-of-type{
@@ -116,58 +109,22 @@ h1{
 	opacity: 0.8;
 }
 
-
-
-.login {
-	width: 346px;
-    height: 360px;
-    margin-top: -76px;
-    margin-left: 1146px;
-    background-color: #222222;
-    border-radius: 22px;
-}
-
-.subb {
-	margin-top: 20px;
-    width: 301px;
-    height: 42px;
-    border-radius: 16px;
-	background-color: #4bb34b;
-	margin-left: 25px;
-	border: none;
-}
-
-.text_subb {
-	font-weight: 600;
-    font-size: 14px;
+.h1_glav {
     color: white;
-    margin-top: 11px;
+    margin-top: 20px;
+    margin-left: 67px;
 }
 
-.subb:hover .text_subb {
-	margin-top: 15px;
+.text_1 {
+    color: gray;
+    margin-top: 14px;
+    margin-left: -5px;
+    font-size: 17px;
+    text-align: center 
 }
 
-.subb:hover {
-	opacity: 0.8;
-}
-
-.register {
-    width: 346px;
-    height: 172px;
-    margin-top: 29px;
-    margin-left: 1146px;
-    background-color: #222222;
-    border-radius: 22px;
-}
-
-.text_register {
-	color: gray;
-    padding: 13px;
-    margin-top: 5px;
-    margin-left: 10px;
+.text_2 {
+    font-size: 15px;
     text-align: center;
+    margin-top: 37px;
 }
-
-
-

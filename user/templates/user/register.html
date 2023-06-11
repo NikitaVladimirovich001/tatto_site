@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <link rel="stylesheet" href="{% static 'css/register.css' %}">
+  <meta charset="UTF-8">
+  <title>Регистрация</title>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="er">
+      <div class="register">
+        <h1 class="h1_glav">Введите ваши данные</h1>
+        <p class="text_1">Ваши данные будет использованы для входа на сайт</p>
+        <form id="signin" method="" action="" autocomplete="off">
+          <input type="text" id="user" name="user" placeholder="Логин" />
+          <input type="text" id="user" name="user" placeholder="email" />
+          <input type="password" id="pass" name="pass" placeholder="Пароль" />
+          <input type="password" id="pass" name="pass" placeholder="Повторите пароль" />
+          <button class="sub" onclick="window.open('{% url 'home' %}', '_blank')"><p class="text_sub">Зарегистрироваться</p></button>
+          <p class="text_2" style="margin-top: 30px; font-size: 13px;">Нажимая «Зарегистрироваться», вы принимаете пользовательское соглашение и политику конфиденциальности</p>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+</body>
+</html>
