@@ -17,7 +17,9 @@
 		<div id="wrapper">
 			<form id="signin" method="post" action="{% url 'user' %}">
 				{% csrf_token %}
-				{{ form.as_p }}
+<!--				{{ form.as_p }}-->
+				{{ form.username }}
+				{{ form.password }}
 <!--				<input type="text" id="user" name="user" placeholder="Логин" />-->
 <!--				<input type="password" id="pass" name="pass" placeholder="Пароль" />-->
 				<button class="sub"><p class="text_sub">Войти</p></button>

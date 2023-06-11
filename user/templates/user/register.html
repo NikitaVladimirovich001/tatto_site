@@ -12,12 +12,19 @@
       <div class="register">
         <h1 class="h1_glav">Введите ваши данные</h1>
         <p class="text_1">Ваши данные будет использованы для входа на сайт</p>
-        <form id="signin" method="" action="" autocomplete="off">
-          <input type="text" id="user" name="user" placeholder="Логин" />
-          <input type="text" id="user" name="user" placeholder="email" />
-          <input type="password" id="pass" name="pass" placeholder="Пароль" />
-          <input type="password" id="pass" name="pass" placeholder="Повторите пароль" />
-          <button class="sub" onclick="window.open('{% url 'home' %}', '_blank')"><p class="text_sub">Зарегистрироваться</p></button>
+        <form id="signin" method="post" action="{% url 'register' %}" autocomplete="off">
+          {% csrf_token %}
+          {{ form.first_name }}
+<!--          <input type="text" id="user" name="user" placeholder="Логин" />-->
+          {{ form.username }}
+<!--          <input type="text" id="user" name="user" placeholder="Имя" />-->
+          {{ form.email }}
+<!--          <input type="text" id="user" name="user" placeholder="email" />-->
+          {{ form.password1 }}
+<!--          <input type="password" id="pass" name="pass" placeholder="Пароль" />-->
+          {{ form.password2 }}
+<!--          <input type="password" id="pass" name="pass" placeholder="Повторите пароль" />-->
+          <button class="sub"><p class="text_sub">Зарегистрироваться</p></button>
           <p class="text_2" style="margin-top: 30px; font-size: 13px;">Нажимая «Зарегистрироваться», вы принимаете пользовательское соглашение и политику конфиденциальности</p>
         </form>
       </div>

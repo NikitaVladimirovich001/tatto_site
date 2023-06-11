@@ -1,6 +1,6 @@
 from django.shortcuts import render, HttpResponseRedirect
 from user.models import User
-from user.forms import UserLoginForm
+from user.forms import UserLoginForm, UserRegistrationForm
 from django.contrib import auth
 from django.urls import reverse
 def user(request):# Авторизация
@@ -12,12 +12,20 @@ def user(request):# Авторизация
             user =auth.authenticate(username=username, password=password)
             if user:
                 auth.login(request, user)
-                return HttpResponseRedirect('home')
+                return HttpResponseRedirect('sitetatto/')
     else:
         form = UserLoginForm()
-    context = {'from': UserLoginForm()}
+    context = {'form': UserLoginForm()}
     return render(request, 'user/user.html', context)
 
 def register(request):
-    return render(request, 'user/register.html')
+    if request.method == 'POST':
+        form = UserRegistrationForm(data=request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(reverse('users:user'))
+    else:
+        form = UserRegistrationForm()
+    context = {'form': form}
+    return render(request, 'user/register.html', context)
 
