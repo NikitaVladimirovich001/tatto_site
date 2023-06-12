@@ -9,7 +9,7 @@ def user(request):# Авторизация
         if form.is_valid():
             username = request.POST['username']
             password = request.POST['password']
-            user =auth.authenticate(username=username, password=password)
+            user = auth.authenticate(username=username, password=password)
             if user:
                 auth.login(request, user)
                 return HttpResponseRedirect('sitetatto/')
