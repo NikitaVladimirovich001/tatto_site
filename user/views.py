@@ -10,6 +10,8 @@ def user(request):# Авторизация
             username = request.POST['username']
             password = request.POST['password']
             user = auth.authenticate(username=username, password=password)
+            if user.is_superuser:
+                return HttpResponseRedirect('/admin/')
             if user:
                 auth.login(request, user)
                 return HttpResponseRedirect('sitetatto/')
@@ -23,9 +25,10 @@ def register(request):
         form = UserRegistrationForm(data=request.POST)
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect(reverse('users:user'))
+            return HttpResponseRedirect(reverse('user'))
     else:
         form = UserRegistrationForm()
     context = {'form': form}
     return render(request, 'user/register.html', context)
+    success_message = 'Вы успешно зарегестрированы!'
 

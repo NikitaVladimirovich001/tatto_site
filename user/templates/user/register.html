@@ -12,11 +12,11 @@
       <div class="register">
         <h1 class="h1_glav">Введите ваши данные</h1>
         <p class="text_1">Ваши данные будет использованы для входа на сайт</p>
-        <form id="signin" method="post" action="{% url 'user' %}" autocomplete="off">
+        <form id="signin" method="post" action=".">
           {% csrf_token %}
-          {{ form.first_name }}
-<!--          <input type="text" id="user" name="user" placeholder="Логин" />-->
           {{ form.username }}
+<!--          <input type="text" id="user" name="user" placeholder="Логин" />-->
+          {{ form.first_name }}
 <!--          <input type="text" id="user" name="user" placeholder="Имя" />-->
           {{ form.email }}
 <!--          <input type="text" id="user" name="user" placeholder="email" />-->

@@ -16,6 +16,14 @@ body{
     background-color: #222222;
 }
 
+.user_img {
+    width: 911px;
+    border-radius: 30px;
+    border: white;
+    margin-top: 100px;
+    margin-left: 100px;
+}
+
 .logo {
 	width: 100px;
     margin-top: 10px;

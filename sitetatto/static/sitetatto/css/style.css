@@ -97,6 +97,14 @@ h1, h2, h3, h4, h5 {
     box-shadow: 0px, 0px,45px, white;
 }
 
+/* Кнопка выхода */
+.nav_link_1 {
+    font-size: 32px;
+    margin-left: 582px;
+    color: white;
+    text-decoration: none;
+}
+
 .strelrka {
     margin-top: 34px;
 
