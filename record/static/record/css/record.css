@@ -1,14 +1,5 @@
 @import url="{% static '/img/digital-digital-art-artwork-illustration-minimalism-hd-wallpaper-preview.jpg' %}";
 
-input[type=time]::-webkit-calendar-picker-indicator {
-  opacity: 0;
-}
-
-input[type=date]::-webkit-calendar-picker-indicator {
-  opacity: 0;
-}
-
-
 body {
     background-color: aquamarine;
 }
@@ -37,8 +28,8 @@ section{
 }
 .form-box{
     position: relative;
-    width: 600px;
-    height: 750px;
+    width: 537px;
+    height: 623px;
     background: transparent;
     border: 2px solid rgba(255,255,255,0.5);
     border-radius: 20px;
@@ -52,63 +43,9 @@ h2{
     font-size: 2em;
     color: #fff;
     text-align: center;
-}
-.inputbox{
-    position: relative;
-    margin: 30px 0;
-    width: 310px;
-    border-bottom: 2px solid #fff;
-}
-.inputbox label{
-    position: absolute;
-    top: 50%;
-    left: 5px;
-    transform: translateY(-50%);
-    color: #fff;
-    font-size: 1em;
-    pointer-events: none;
-    transition: .5s;
-}
-input:focus ~ label,
-input:valid ~ label{
-top: -5px;
-}
-.inputbox input {
-    width: 100%;
-    height: 50px;
-    background: transparent;
-    border: none;
-    outline: none;
-    font-size: 1em;
-    padding:0 35px 0 5px;
-    color: #fff;
-}
-.inputbox ion-icon{
-    position: absolute;
-    right: 8px;
-    color: #fff;
-    font-size: 1.2em;
-    top: 20px;
-}
-.forget{
-    margin: -15px 0 15px ;
-    font-size: .9em;
-    color: #fff;
-    display: flex;
-    justify-content: space-between;
+    margin-top: -227px;
 }
 
-.forget label input{
-    margin-right: 3px;
-
-}
-.forget label a{
-    color: #fff;
-    text-decoration: none;
-}
-.forget label a:hover{
-    text-decoration: underline;
-}
 button {
     width: 100%;
     height: 40px;
@@ -121,25 +58,82 @@ button {
     font-weight: 600;
 }
 
-.register{
-    font-size: .9em;
-    color: #fff;
-    text-align: center;
-    margin: 25px 0 10px;
-}
-.register p a{
-    text-decoration: none;
-    color: #fff;
-    font-weight: 600;
-}
-.register p a:hover{
-    text-decoration: underline;
+#signin {
+	height: 90px;
+	width: 300px;
+	border-radius: 8px;
+	position: relative;
 }
 
-.action {
-    display: flex;
-    flex-direction: row-reverse и column-reverse.
+#signin input:first-of-type{
+	border-top-right-radius: 8px;
+	border-top-left-radius: 8px;
 }
+#signin input:last-of-type{
+	border-bottom-right-radius: 8px;
+	border-bottom-left-radius: 8px;
+}
+#signin  input[type="text"], #signin  input[type="password"], #signin button[type="submit"]{
+	background: rgb(28, 30, 33);
+	box-shadow: inset -100px -100px 0 rgb(28, 30, 33); /*Prevent yellow autofill color*/
+	color: rgb(255, 255, 255);
+	margin-left: 22px;
+}
+#signin  input[type="text"], #signin  input[type="password"]{
+	position: relative;
+    display: block;
+    width: 280px;
+    height: 45px;
+    border: 0;
+    outline: 0;
+    top: -2px;
+    padding: 0 0 0 20px;
+    font-weight: 700;
+    border-radius: 30px;
+	margin-top: 20px;
+}
+#signin  input[type="text"]:focus, #signin  input[type="password"]:focus{
+	color: rgb(255, 255, 255);
+}
+
+#signin p {
+	color: rgb(79, 85, 97);
+	padding: 0 20px;
+	font-weight: 700;
+	font-size: 12px;
+	margin: 5px 0 0 0;
+}
+#signin p > a{
+	color: rgb(255, 255, 255);
+	text-decoration: none;
+}
+#signin p > a:hover{
+	border-bottom: 1px solid;
+}
+
+.sub {
+	margin-top: 20px;
+    width: 301px;
+    height: 42px;
+    border-radius: 16px;
+	border: none;
+	margin-left: 25px;
+}
+
+.text_sub {
+    font-size: 14px;
+    margin-top: 11px;
+}
+
+.sub:hover .text_sub {
+	margin-top: 15px;
+}
+
+.sub:hover {
+	opacity: 0.8;
+}
+
+
 
 
 

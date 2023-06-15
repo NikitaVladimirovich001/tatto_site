@@ -1,6 +1,6 @@
 from django.urls import path, include
-from . import views
+from record.views import record
 
 urlpatterns = [
-    path('', views.record, name='record'),
+    path('', record, name='record'),
 ]
