@@ -130,7 +130,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <form class="position-absolute" style="z-index: -1; float: right;">
+                            <form class="position-absolute" style="z-index: -1; margin-left: 24px;">
                                 {% csrf_token %}
                                 {{ form }}
                             <input type="submit" value="Выбрать">
@@ -144,11 +144,40 @@
 
                             <div class="galer_ban_3">
                                 <div class="block_gal_1">
-                                        {% for image in image_list %}
-                                                <a href="{{image.image.url}}" data-lightbox="lbox" style="text-decoration: none;">
-                                                    <img src="{{image.image.url}}" alt="" class="img_1_gal">
-                                                </a>
-                                        {% endfor %}
+                                        <ul class="list-unstyled list-group list-group-horizontal">
+
+                                            {% for image in image_list %}
+                                                    <a href="{{image.image.url}}?page={{tovar_list.previous_page_number}}" data-lightbox="lbox" style="text-decoration: none;">
+                                                        <img src="{{image.image.url}}" alt="" class="img_1_gal">
+                                            {% endfor %}
+                                            <li class="list-group-item">
+                                                &lt;
+                                            </li>
+                                            {% for image in image_list %}
+                                                <a/>
+                                            {% endfor %}
+
+                                            {% for i in paginator.page_range %}
+                                                {% if i != image.number  %}
+                                                     <a href="{{image.image.url}}?page={{tovar_list.previous_page_number}}" data-lightbox="lbox" style="text-decoration: none;">
+                                                                <img src="{{image.image.url}}" alt="" class="img_1_gal">
+
+                                                {% endif %}
+                                                    <li class="list-group-item
+                                                            {% if i == tovar_list.number %}
+                                                                active
+                                                            {% endif %}">
+                                                                {{i}}
+                                                        </li>
+                                                        {% if i != image.number %}
+                                                            </a>
+                                                        {% endif %}
+                                                {% endfor %}
+                                                    {% if image.has_next %}
+                                                        </a>
+                                                    {% endif %}
+
+                                            </ul>
                                 </div>
                         </div>
                     </div>
