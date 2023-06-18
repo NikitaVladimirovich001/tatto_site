@@ -1,0 +1,207 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    font-family: 'Myriad Pro', sans-serif 'Microsoft JhengHei';
+    font-size: 15 px;
+    line-height: 2.84;
+    color: white;
+
+    background-color: gray;
+}
+
+h1, h2, h3, h4, h5 {
+    margin: 0;
+}
+
+/* Шапка */
+.header {
+    width: 100%;
+    height: 175px;
+
+    background-color: #18181d;
+}
+
+ /* Контейнер */
+.container {
+    width: 100%;
+    max-width: 1820px;
+    margin: 0 auto;
+}
+
+/* геолокация */
+.gel {
+    width: 70px;
+}
+
+.text_geolocation {
+    font-size: 22px;
+    font-family: 'Microsoft JhengHei';
+    font-weight: lighter;
+}
+
+.geolocaton {
+    display: flex;
+    align-items: center;
+
+}
+
+.nomer {
+    display: flex;
+    align-items: center;
+    margin-top: -12px;
+    margin-left: 10px;
+}
+
+/* номер */
+.nom {
+    width: 60px;
+}
+
+.text_nomer {
+    font-size: 22px;
+    font-family: 'Microsoft JhengHei';
+    font-weight: lighter;
+}
+
+.info_geolocation_nomer {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+/* кнопка записи */
+.knopka_zapis {
+    display: inline-block;
+    vertical-align: top;
+    padding: 1px 59px;
+
+    border: 3px solid #fff;
+
+    color: #fff;
+    font-size: 20px;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 50px;
+
+    transition: background .1s
+    linear, color .1s linear;
+}
+
+.knopka_zapis:hover {
+    background-color: #fff;
+    color: #333;
+}
+
+.header_iner {
+    display: flex;
+    align-items: center;
+    margin-top: 0px;
+}
+
+.ert {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.zagolovok {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 30px;
+    color: white;
+    font-family: 'Microsoft JhengHei';
+    text-transform: uppercase;
+    font-weight: lighter;
+
+    margin-top: -24px;
+}
+
+/* контент */
+.content { /* Основная информация */
+    width: 100%;
+    height: 106vh;
+    background-color: #cecdcf;
+}
+
+.we {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.master_danil {
+    margin-right: -95px;
+    margin-top: 0px;
+    width: 110px;
+    height: 942px;
+}
+
+.osnov_text {
+    font-size: 29px;
+    line-height: 1.2;
+    color: rgb(0, 0, 0);
+    font-family: 'Microsoft JhengHei';
+    margin-top: 13px;
+    font-weight: lighter;
+}
+
+.nazad {
+    display: inline-block;
+    vertical-align: top;
+    padding: 1px 41px;
+
+    border: 3px solid #fff;
+
+    color: #fff;
+    font-size: 20px;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 50px;
+
+    transition: background .1s
+    linear, color .1s linear;
+
+    margin-top: 82px;
+    font-family: 'Microsoft JhengHei';
+    font-weight: lighter;
+}
+
+.nazad:hover {
+    background-color: #fff;
+    color: #333;
+}
+
+
+.naz {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.zag_123 {
+    font-size: 29px;
+    color: rgb(0, 0, 0);
+    font-family: 'Microsoft JhengHei';
+    font-weight: lighter;
+    text-transform: uppercase;
+    margin-top: -21px;
+}
+
+.elem_spiska {
+    font-size: 29px;
+    color: rgb(0, 0, 0);
+    font-family: 'Microsoft JhengHei';
+    line-height: 1.2;
+    font-weight: 200;
+}
+
+.spisok {
+    margin-top: 25px;
+    margin-left: 36px;
+
+}

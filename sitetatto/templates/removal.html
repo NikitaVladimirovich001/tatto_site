@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'sitetatto/css/removal.css' %}">
+    <title>Удаление тату</title>
+</head>
+<body>
+    <div class="baner_Danil">
+        <div class="header">
+            <div class="container">
+                <div class="ert">
+                    <div class="header_iner">
+                        <img src="{% static 'img/Logo.png' %}" alt="" class="logo"> <!--Логотип-->
+
+                        <div class="info_geolocation_nomer">
+                            <div class="nomer">
+                                <img src="{% static 'img/nomer.png' %}" alt="" class="nom">
+                                <p class="text_nomer">+ 7 (963) 863 50 50 </p>
+                            </div>
+
+                            <div class="geolocaton">
+                                <img src="{% static 'img/geolocation.png' %}" alt="" class="gel">
+                                <p class="text_geolocation">Курган, ул Коли Мяготина, 56 А</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="{% url 'record' %}" class="knopka_zapis">Записаться</a>
+                </div>
+                <h4 class="zagolovok">Удаление</h4>
+            </div>
+        </div>
+        <div class="content"> <!--Контент-->
+            <div class="container">
+                <div class="we">
+                    <div class="naz">
+                        <p class="zag_123">Самое важное, что нужно знать про удаление тату</p>
+                        <p class="osnov_text"><i>
+                            Внимание! рекомендуем делать удаление только на лазерах<br>
+                            последнего поколения c технологией Q-SWITCH Такие лазеры<br>
+                            не повреждает кожу и не оставляют шрамов и рубцов после<br>
+                            процедуры!<br></i>
+                            <br>
+                            Что нужно знать про выведение тату?
+
+                          <div class="spisok">
+                            <ul>
+                                <li class="elem_spiska">
+                                    Лазер воздействует только на пигмент,<br>
+                                    не повреждая поверхность кожи.
+                                </li>
+                                <br>
+                                <li class="elem_spiska">
+                                    Количеств сеансов зависит от многих<br>
+                                    факторов, например от вашего обмена веществ.
+                                </li>
+                                <br>
+                                <li class="elem_spiska">
+                                    Важно! Для тех, кто хочет осветлить и<br>
+                                    переделать татуировку в нашем салоне,<br>
+                                    стоимость удаления тату на 50 % дешевле.
+                                </li>
+                            </ul>
+                          </div>
+
+                        </p>
+                        <a href="{% url 'home' %}" class="nazad"> << Назад</a>
+                    </div>
+                    <img src="{% static 'img/fon_removal.png' %}" alt="" class="master_danil">
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

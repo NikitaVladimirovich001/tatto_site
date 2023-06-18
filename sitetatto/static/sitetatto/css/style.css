@@ -27,6 +27,10 @@ h1, h2, h3, h4, h5 {
     margin: 0 auto;
 }
 
+.cont {
+
+}
+
 /* Фон 1 */
 .fon_1 {
     margin-top: -17px;
@@ -642,7 +646,7 @@ h1, h2, h3, h4, h5 {
 
 .fon_baner_left_5 {
     width: 1920px;
-    height: 864px;
+    height: 1202px;
     background-color: #18181d;
     margin-top: -29px;
     margin-left: 0px;
@@ -652,11 +656,11 @@ h1, h2, h3, h4, h5 {
     width: 991px;
     height: 816px;
     margin-left: 931px;
-    margin-top: 10px;
+    margin-top: 349px;
 }
 
 /* Заголовок */
-.center_text_baner_5{
+#center_text_baner_5{
     display: flex;
     align-items: center;
     justify-content: center;

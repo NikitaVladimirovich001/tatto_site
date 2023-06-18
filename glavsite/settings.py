@@ -121,7 +121,7 @@ EMAIL_HOST = 'EMAIL_HOST'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'nikital983956@gmail.com'
-EMAIL_HOST_PASSWORD = 'nikita9835'
+EMAIL_HOST_PASSWORD = ''
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

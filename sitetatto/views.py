@@ -2,10 +2,19 @@ from django.shortcuts import render
 from django.views.generic import ListView
 from sitetatto.forms import PaintersFilterForm
 from sitetatto.models import Painter, Image
-
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .models import Comment
 from .forms import CommentForm
+
+def tatto(request):
+    return render(request, 'tatto.html')
+
+def removal(request):
+    return render(request, 'removal.html')
+
+
+def correction(request):
+    return render(request, 'correction.html')
 
 class PainterListView(ListView):
     model = Image

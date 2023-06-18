@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'sitetatto/css/correction.css' %}">
+    <title>Исправление тату</title>
+</head>
+<body>
+    <div class="baner_Danil">
+        <div class="header">
+            <div class="container">
+                <div class="ert">
+                    <div class="header_iner">
+                        <img src="{% static 'img/Logo.png' %}" alt="" class="logo"> <!--Логотип-->
+
+                        <div class="info_geolocation_nomer">
+                            <div class="nomer">
+                                <img src="{% static 'img/nomer.png' %}" alt="" class="nom">
+                                <p class="text_nomer">+ 7 (963) 863 50 50 </p>
+                            </div>
+
+                            <div class="geolocaton">
+                                <img src="{% static 'img/geolocation.png' %}" alt="" class="gel">
+                                <p class="text_geolocation">Курган, ул Коли Мяготина, 56 А</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="{% url 'record' %}" class="knopka_zapis">Записаться</a>
+                </div>
+                <h4 class="zagolovok">Исправление татуировок</h4>
+            </div>
+        </div>
+        <div class="content"> <!--Контент-->
+            <div class="container">
+                <div class="we">
+                    <div class="naz">
+                        <p class="zag_123">Салон исправления и перекрытия тату в Кургане</p>
+                        <p class="osnov_text">
+                            Особыми операциями для мастеров тату являются ИСПРАВЛЕНИЯ<br>
+                            и ПЕРЕКРЫТИЯ («COVER-UP») тату. При перекрытиях тату на старый узор<br>
+                            кладется абсолютно новый, полностью его перекрывая. При<br>
+                            исправлениях или переделках сюжет может быть достроен, т.е. части<br>
+                            старого вплетаются в новый узор. Но в том и в другом случае<br>
+                            первоначальный рисунок полностью изменяется.<br>
+                            <br>
+                            При ИСПРАВЛЕНИЯХ тату мастера обычно используют затушевки,<br>
+                            белый краситель или, наоборот, радикально черный. Тату-мастер<br>
+                            примеряет на старый рисунок новый, дорисовывает его в<br>
+                            соответствии с пожеланиями клиента и приступает к работе.
+
+                        </p>
+                        <a href="{% url 'home' %}" class="nazad"> << Назад</a>
+                    </div>
+                    <img src="{% static 'img/fon_correction.jpg' %}" alt="" class="master_danil">
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

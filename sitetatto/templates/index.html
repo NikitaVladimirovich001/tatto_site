@@ -22,7 +22,7 @@
                         <a class="nav_link" href="#baner_2">Услуги</a>
                         <a class="nav_link" href="#baner_3">Галерея</a>
                         <a class="nav_link" href="#baner_4">Мастера</a>
-                        <a class="nav_link" href="#baner_5">Отзывы</a>
+                        <a class="nav_link" href="#center_text_baner_5">Отзывы</a>
                         <a class="nav_link"href="{% url 'user' %}">Выход</a>
                     </nav>
                 </div>
@@ -83,7 +83,7 @@
                 </p>
                 <div class="sod_baner_2">
                     <div class="sod_baner_2_1">
-                        <a href="tattoo.html" class="knopka_baner_2_1">
+                        <a href="{% url 'tatto' %}" class="knopka_baner_2_1">
                             <img src="{% static 'sitetatto/img/tatto.png' %}" alt="" class="hover_el_1">
                             <p class="text_baner_2_1">
                                 Татуировки
@@ -91,7 +91,7 @@
                         </a>
                     </div>
                     <div class="sod_baner_2_2">
-                        <a href="correction.html" class="knopka_baner_2_2">
+                        <a href="{% url 'correction' %}" class="knopka_baner_2_2">
                             <img src="{% static 'sitetatto/img/risunk.png' %}" alt="" class="hover_el_2">
                             <p class="text_baner_2_2">
                                 Исправление
@@ -99,7 +99,7 @@
                         </a>
                     </div>
                         <div class="sod_baner_2_3">
-                            <a href="removal.html" class="knopka_baner_2_3">
+                            <a href="{% url 'removal' %}" class="knopka_baner_2_3">
                                 <img src="{% static 'sitetatto/img/del.png' %}" alt="" class="hover_el_3">
                                 <p class="text_baner_2_3">
                                     Удаление
@@ -142,17 +142,17 @@
 <!--                        <div class="pr">-->
                             <div class="galer_ban_3">
                                 <div class="block_gal_1">
-                                    {% for image in image_list %}
-                                        <a href="{{image.image.url}}" data-lightbox="lbox">
-                                            <img src="{{image.image.url}}" alt="" class="img_1_gal">
-                                        </a>
-<!--                                        <a href="{% static 'sitetatto/img/2.jpg' %}" data-lightbox="lbox">-->
-<!--                                            <img src="{% static 'sitetatto/img/2.jpg' %}" alt="" class="img_1_gal">-->
-<!--                                        </a>-->
-<!--                                        <a href="{% static 'sitetatto/img/3.jpg' %}" data-lightbox="lbox">-->
-<!--                                            <img src="{% static 'sitetatto/img/3.jpg' %}" alt="" class="img_1_gal">-->
-<!--                                        </a>-->
-                                    {% endfor %}
+                                        {% for image in image_list %}
+                                                <a href="{{image.image.url}}" data-lightbox="lbox">
+                                                    <img src="{{image.image.url}}" alt="" class="img_1_gal">
+                                                </a>
+        <!--                                        <a href="{% static 'sitetatto/img/2.jpg' %}" data-lightbox="lbox">-->
+        <!--                                            <img src="{% static 'sitetatto/img/2.jpg' %}" alt="" class="img_1_gal">-->
+        <!--                                        </a>-->
+        <!--                                        <a href="{% static 'sitetatto/img/3.jpg' %}" data-lightbox="lbox">-->
+        <!--                                            <img src="{% static 'sitetatto/img/3.jpg' %}" alt="" class="img_1_gal">-->
+        <!--                                        </a>-->
+                                        {% endfor %}
                                 </div>
 <!--                                <div class="block_gal_2">-->
 <!--                                    <a href="{% static 'sitetatto/img/4.jpg' %}" data-lightbox="lbox">-->
@@ -197,7 +197,7 @@
         <div class="fon_baner_left_5">
             <img src="{% static 'sitetatto/img/imf_gal.jpg' %}" alt="" class="fon_prav_5">
             <div class="container">
-                <p class="center_text_baner_5">
+                <p id="center_text_baner_5">
                     Отзывы
                 </p>
                 <div class="left_content_glav">

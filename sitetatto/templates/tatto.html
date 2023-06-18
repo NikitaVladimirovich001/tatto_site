@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'sitetatto/css/tatto.css' %}">
+    <title>Сделать тату</title>
+</head>
+<body>
+    <div class="baner_Danil">
+        <div class="header">
+            <div class="container">
+                <div class="ert">
+                    <div class="header_iner">
+                        <img src="{% static 'img/Logo.png' %}" alt="" class="logo"> <!--Логотип-->
+
+                        <div class="info_geolocation_nomer">
+                            <div class="nomer">
+                                <img src="{% static 'img/nomer.png' %}" alt="" class="nom">
+                                <p class="text_nomer">+ 7 (963) 863 50 50 </p>
+                            </div>
+
+                            <div class="geolocaton">
+                                <img src="{% static 'img/geolocation.png' %}" alt="" class="gel">
+                                <p class="text_geolocation">Курган, ул Коли Мяготина, 56 А</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="{% url 'record' %}" class="knopka_zapis">Записаться</a>
+                </div>
+                <h4 class="zagolovok">Сделать тату</h4>
+            </div>
+        </div>
+        <div class="content"> <!--Контент-->
+            <div class="container">
+                <div class="we">
+                    <div class="naz">
+                        <p class="zag_123">Нанесение татуировок</p>
+                        <p class="osnov_text">
+                            Приветствуем вас на странице посвященной нанесению<br>
+                            татуировки! Всем из нас хочется выделяться из толпы и<br>
+                            показывать окружающим свою индивидуальность.<br>
+                            <br>
+                            С помощью нашей студии татуировок у вас появляется<br>
+                            уникальная возможность привести свои желания и мечты в<br>
+                            реальность. Украсить свое тело оригинальными татуировками<br>
+                            с эксклюзивными эскизами по вашему выбору.<br>
+                            <br>
+                            В реалиях сегодняшнего дня тату это искусство с большой<br>
+                            буквы имеющее под собой бесконечное количество палитр<br>
+                            и форм!
+                        </p>
+                        <a href="{% url 'home' %}" class="nazad"> << Назад</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
