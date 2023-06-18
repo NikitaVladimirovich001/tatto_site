@@ -132,7 +132,7 @@
                             </div>
                             <form class="position-absolute" style="z-index: -1; float: right;">
                                 {% csrf_token %}
-                                {{ form.aps }}
+                                {{ form }}
                             <input type="submit" value="Выбрать">
                             </form>
                             <div class="niz_filter">
@@ -141,34 +141,15 @@
                                 {% endfor %}
                             </div>
                         </div>
-<!--                        <div class="pr">-->
+
                             <div class="galer_ban_3">
                                 <div class="block_gal_1">
                                         {% for image in image_list %}
                                                 <a href="{{image.image.url}}" data-lightbox="lbox" style="text-decoration: none;">
                                                     <img src="{{image.image.url}}" alt="" class="img_1_gal">
                                                 </a>
-        <!--                                        <a href="{% static 'sitetatto/img/2.jpg' %}" data-lightbox="lbox">-->
-        <!--                                            <img src="{% static 'sitetatto/img/2.jpg' %}" alt="" class="img_1_gal">-->
-        <!--                                        </a>-->
-        <!--                                        <a href="{% static 'sitetatto/img/3.jpg' %}" data-lightbox="lbox">-->
-        <!--                                            <img src="{% static 'sitetatto/img/3.jpg' %}" alt="" class="img_1_gal">-->
-        <!--                                        </a>-->
                                         {% endfor %}
                                 </div>
-<!--                                <div class="block_gal_2">-->
-<!--                                    <a href="{% static 'sitetatto/img/4.jpg' %}" data-lightbox="lbox">-->
-<!--                                        <img src="{% static 'sitetatto/img/4.jpg' %}" alt="" class="img_1_gal">-->
-<!--                                    </a>-->
-<!--                                    <a href="{% static 'sitetatto/img/5.jpg' %}" data-lightbox="lbox">-->
-<!--                                        <img src="{% static 'sitetatto/img/5.jpg' %}" alt="" class="img_1_gal">-->
-<!--                                    </a>-->
-<!--                                    <a href="{% static 'sitetatto/img/6.jpg' %}" data-lightbox="lbox">-->
-<!--                                        <img src="{% static 'sitetatto/img/6.jpg' %}" alt="" class="img_1_gal">-->
-<!--                                    </a>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                        <img src="{% static 'sitetatto/img/list.png' %}" alt="" class="list">-->
                         </div>
                     </div>
                 </div>
@@ -217,6 +198,24 @@
                     </div>
                     <div class="border">
 
+                        <form action="add_comment/" method="post">  <!--Форма для добовления комментариев-->
+                            {% csrf_token %}
+                            {{ form.as_p }}
+                            <button type="submit">Добавить</button>
+                        </form>
+
+
+                          {% if comments %} <!--Список комментариев-->
+                            <ul>
+                              {% for comment in comments %}
+                                <li>{{ comment.text }} by {{ comment.author.username }} on {{ comment.created_at }}</li>
+                              {% endfor %}
+                            </ul>
+                          {% else %}
+                            <p>Комментария нет</p>
+                          {% endif %}
+
+                    </div>
 
 
 <!--                        <p class="content_border">Потрясающая отмосфера что не хочется<br>-->
@@ -226,7 +225,7 @@
 <!--                        <p class="content_border_name">-->
 <!--                            Мария-->
 <!--                        </p>-->
-                    </div>
+
 
 
 <!--                    <div class="blok_knopka_otz">-->

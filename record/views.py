@@ -1,7 +1,9 @@
-from django.core.mail import EmailMultiAlternatives
+from django.core.mail import send_mail, EmailMultiAlternatives
 from django.shortcuts import render
 from django.template.loader import get_template
 from record.forms import ContactForm
+from django.core.mail import EmailMessage
+
 
 
 def record(request):
