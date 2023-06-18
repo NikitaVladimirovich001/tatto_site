@@ -118,14 +118,16 @@
                     <div class="blok_nav_and_gal">
                         <div class="content_nav_baner_3">
                             <div class="verx_nav">
-                                <div class="filtr">
-                                    <div class="left_filter">
-                                        <p class="fill">Фильтр</p>
-                                        <img src="{% static 'sitetatto/img/strelka_baner_3.png' %}" alt="" class="strelka_ver">
-                                    </div>
-                                </div>
                                 <div class="zagolovok_filtr">
                                     <p class="zag_masera">Мастера</p>
+                                </div>
+                                <div class="filtr">
+                                    <div class="left_filter">
+                                        <form class="form_search" action="{% url 'search' %}" method="get">
+                                            <input class="input_search" type="search" type="text" name="q" placeholder="Поиск мастеров">
+                                                <button class="button_search" type="submit">Найти</button>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
                             <form class="position-absolute" style="z-index: -1; float: right;">
@@ -143,7 +145,7 @@
                             <div class="galer_ban_3">
                                 <div class="block_gal_1">
                                         {% for image in image_list %}
-                                                <a href="{{image.image.url}}" data-lightbox="lbox">
+                                                <a href="{{image.image.url}}" data-lightbox="lbox" style="text-decoration: none;">
                                                     <img src="{{image.image.url}}" alt="" class="img_1_gal">
                                                 </a>
         <!--                                        <a href="{% static 'sitetatto/img/2.jpg' %}" data-lightbox="lbox">-->

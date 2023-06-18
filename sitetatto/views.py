@@ -52,3 +52,18 @@ def comment_list(request):
 
     return render(request, 'comment_list.html', {'comments': comments, 'form': form})
 
+class Search(ListView):
+    template_name = 'index.html'
+    context_object_name = 'Painter'
+    paginate_by = 5
+
+    def get_queryset(self):
+        return Painter.objects.filter(name__icontains=self.request.GET.get('q'))
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['q'] = self.request.GET.get('q')
+        return context
+
+
+
