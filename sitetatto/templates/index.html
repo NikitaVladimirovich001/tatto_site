@@ -144,40 +144,19 @@
 
                             <div class="galer_ban_3">
                                 <div class="block_gal_1">
-                                        <ul class="list-unstyled list-group list-group-horizontal">
+                                    {% if image_list.has_previous %}
+                                         <a href="?page={{ image_list.previous_page_number }}" class="pagination__button">&lt;</a>
+                                    {% endif %}
 
-                                            {% for image in image_list %}
-                                                    <a href="{{image.image.url}}?page={{tovar_list.previous_page_number}}" data-lightbox="lbox" style="text-decoration: none;">
-                                                        <img src="{{image.image.url}}" alt="" class="img_1_gal">
-                                            {% endfor %}
-                                            <li class="list-group-item">
-                                                &lt;
-                                            </li>
-                                            {% for image in image_list %}
-                                                <a/>
-                                            {% endfor %}
+                                {% for image in image_list %}
+                                    <a href="{{image.image.url}}" data-lightbox="lbox" style="text-decoration: none;">
+                                        <img src="{{image.image.url}}" alt="" class="img_1_gal">
+                                    </a>
+                                {% endfor %}
 
-                                            {% for i in paginator.page_range %}
-                                                {% if i != image.number  %}
-                                                     <a href="{{image.image.url}}?page={{tovar_list.previous_page_number}}" data-lightbox="lbox" style="text-decoration: none;">
-                                                                <img src="{{image.image.url}}" alt="" class="img_1_gal">
-
-                                                {% endif %}
-                                                    <li class="list-group-item
-                                                            {% if i == tovar_list.number %}
-                                                                active
-                                                            {% endif %}">
-                                                                {{i}}
-                                                        </li>
-                                                        {% if i != image.number %}
-                                                            </a>
-                                                        {% endif %}
-                                                {% endfor %}
-                                                    {% if image.has_next %}
-                                                        </a>
-                                                    {% endif %}
-
-                                            </ul>
+                                {% if image_list.has_next %}
+                                    <a href="?page={{ image_list.next_page_number }}" class="pagination__button">&gt;</a>
+                                {% endif %}
                                 </div>
                         </div>
                     </div>
@@ -196,8 +175,8 @@
                 <div class="sod_baner_4_1">
                     {% for image in image_list %}
                         <a href="Danil.html" class="knopka_baner_4_1">
-                            <img src="{{painter.avatar.url}}" alt="" class="hover_el_4_1">
-                            <p class="text_baner_4_1">{{ painter.name }}</p>
+                            <img src="{{ image.painter.avatar.url }}" alt="" class="hover_el_4_1">
+                            <p class="text_baner_4_1">{{ image.painter.name }}</p>
                         </a>
                     {% endfor %}
                 </div>

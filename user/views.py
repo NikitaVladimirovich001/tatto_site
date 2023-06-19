@@ -3,6 +3,9 @@ from user.models import User
 from user.forms import UserLoginForm, UserRegistrationForm
 from django.contrib import auth
 from django.urls import reverse
+from django.contrib import messages
+from django.contrib.auth.decorators import login_required
+
 def user(request):# Авторизация
     if request.method == 'POST':
         form = UserLoginForm(data=request.POST)
@@ -28,7 +31,9 @@ def register(request):
             return HttpResponseRedirect(reverse('user'))
     else:
         form = UserRegistrationForm()
+        messages.info(request, 'Убедитесь в коректности данных')
     context = {'form': form}
+    messages.info(request, 'Вы успешно зарегестрировались')
     return render(request, 'user/register.html', context)
-    success_message = 'Вы успешно зарегестрированы!'
+
 

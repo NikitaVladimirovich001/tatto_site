@@ -3,9 +3,9 @@ from django.shortcuts import render
 from django.template.loader import get_template
 from record.forms import ContactForm
 from django.core.mail import EmailMessage
+from django.contrib.auth.decorators import login_required
 
-
-
+@login_required
 def record(request):
 
     context = {}

@@ -4,18 +4,21 @@ from sitetatto.forms import PaintersFilterForm
 from sitetatto.models import Painter, Image
 from .models import Comment
 from .forms import CommentForm
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 
-
-
+@login_required
 def tatto(request): # доп страница информации
     return render(request, 'tatto.html')
 
+@login_required
 def removal(request): # доп страница информации
     return render(request, 'removal.html')
 
 def correction(request): # доп страница информации
     return render(request, 'correction.html')
 
+@login_required
 def add_comment(request): # Добавления комментариев
     if request.method == 'POST':
         form = CommentForm(request.POST)
@@ -26,11 +29,13 @@ def add_comment(request): # Добавления комментариев
         form = CommentForm(initial={'author': request.user.username})
     return render(request, 'index.html', {'form': form})
 
+@login_required
 def comments_list(request): # Вывод списка комментариев
     comments = Comment.objects.all()
     return render(request, 'index.html', {'comments': comments})
 
-class PainterListView(ListView): # Вывод списка мастеров и изображений конкретного мастера (по дефолту отображаются все изображения)
+
+class PainterListView(LoginRequiredMixin, ListView): # Вывод списка мастеров и изображений конкретного мастера (по дефолту отображаются все изображения)
     model = Image
     context_object_name = 'image_list'
     template_name = 'index.html'
@@ -50,18 +55,21 @@ class PainterListView(ListView): # Вывод списка мастеров и �
             result['form'] = form
             return result
 
-
-class Search(ListView): # Поиск (фильтрация мастеров по ключевому слову)
+class Search(ListView):
     template_name = 'index.html'
-    context_object_name = 'Painter'
-    paginate_by = 5
+    context_object_name = 'image_list'
+    paginate_by = 6
 
     def get_queryset(self):
-        return Painter.objects.filter(name__icontains=self.request.GET.get('q'))
+        query = self.request.GET.get('q')
+        if query:
+            return Image.objects.filter(painter__name__icontains=query)
+        else:
+            return Image.objects.all()
 
-    def get_context_data(self, *, object_list=None, **kwargs):
+    def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['q'] = self.request.GET.get('q')
+        context['q'] = self.request.GET.get('q', '')
         return context
 
 
