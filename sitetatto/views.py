@@ -18,22 +18,24 @@ def removal(request): # доп страница информации
 def correction(request): # доп страница информации
     return render(request, 'correction.html')
 
-@login_required
-def add_comment(request): # Добавления комментариев
-    if request.method == 'POST':
+@login_required # комментарии
+def сomment(request):
+    comment = Comment.objects.all()
+    if request.method == "POST":
         form = CommentForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('comments_list')
+            form = CommentForm()
+
     else:
-        form = CommentForm(initial={'author': request.user.username})
-    return render(request, 'index.html', {'form': form})
+        form = CommentForm()
+    return render(request,'index.html', {'comments':comment, 'comment_form':form})
 
-@login_required
-def comments_list(request): # Вывод списка комментариев
-    comments = Comment.objects.all()
-    return render(request, 'index.html', {'comments': comments})
-
+class PaintersList(ListView):
+    model = Painter
+    context_object_name = 'painter_list'
+    template_name = 'index.html'
+    paginate_by = 3
 
 class PainterListView(LoginRequiredMixin, ListView): # Вывод списка мастеров и изображений конкретного мастера (по дефолту отображаются все изображения)
     model = Image
@@ -55,6 +57,8 @@ class PainterListView(LoginRequiredMixin, ListView): # Вывод списка �
             result['form'] = form
             return result
 
+
+
 class Search(ListView):
     template_name = 'index.html'
     context_object_name = 'image_list'
@@ -71,6 +75,4 @@ class Search(ListView):
         context = super().get_context_data(**kwargs)
         context['q'] = self.request.GET.get('q', '')
         return context
-
-
 

@@ -12,6 +12,7 @@
     <title>Тату студия Диониса Пахомова</title>
 </head>
 <body>
+
     <img src="{% static 'sitetatto/img/fon_baner_1.jpg' %}" alt="" class="fon_1">
     <header class="header"> <!--Банер 1-->
             <div class="container">
@@ -21,8 +22,8 @@
                         <a class="nav_link" href="">Главная</a>
                         <a class="nav_link" href="#baner_2">Услуги</a>
                         <a class="nav_link" href="#baner_3">Галерея</a>
-                        <a class="nav_link" href="#baner_4">Мастера</a>
-                        <a class="nav_link" href="#center_text_baner_5">Отзывы</a>
+                        <a class="nav_link" href="{% url 'mastera' %}">Мастера</a>
+                        <a class="nav_link" href="{% url 'comments' page_number=1' %}">Отзывы</a>
                         <a class="nav_link"href="{% url 'user' %}">Выход</a>
                     </nav>
                 </div>
@@ -164,87 +165,7 @@
             </div>
         </div>
     </div>
-   <!-- Банер 4 -->
-    <div id="baner_4">
-        <img src="{% static 'sitetatto/img/fon_baner_4.png' %}" alt="" class="fon_4">
-        <div class="container">
-            <p class="zag_baner_4">
-                Мастера
-            </p>
-            <div class="sod_baner_4">
-                <div class="sod_baner_4_1">
-                    {% for image in image_list %}
-                        <a href="Danil.html" class="knopka_baner_4_1">
-                            <img src="{{ image.painter.avatar.url }}" alt="" class="hover_el_4_1">
-                            <p class="text_baner_4_1">{{ image.painter.name }}</p>
-                        </a>
-                    {% endfor %}
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Банер 5 -->
-    <div id="baner_5">
-        <div class="fon_baner_left_5">
-            <img src="{% static 'sitetatto/img/imf_gal.jpg' %}" alt="" class="fon_prav_5">
-            <div class="container">
-                <p id="center_text_baner_5">
-                    Отзывы
-                </p>
-                <div class="left_content_glav">
-                    <div class="lef_kont">
-                        <a href="" class="knfopka_foto_master_baner_5">
-                            <p class="foto_master_baner_5">
-                                Фото с мастером
-                            </p>
-                        </a>
-                        <a href="" class="knfopka_foto_rabot_baner_5">
-                            <p class="foto_rabot_baner_5">
-                                Фото работы
-                            </p>
-                        </a>
-                    </div>
-                    <div class="border">
 
-                        <form action="add_comment/" method="post">  <!--Форма для добовления комментариев-->
-                            {% csrf_token %}
-                            {{ form.as_p }}
-                            <button type="submit">Добавить</button>
-                        </form>
-
-
-                          {% if comments %} <!--Список комментариев-->
-                            <ul>
-                              {% for comment in comments %}
-                                <li>{{ comment.text }} by {{ comment.author.username }} on {{ comment.created_at }}</li>
-                              {% endfor %}
-                            </ul>
-                          {% else %}
-                            <p>Комментария нет</p>
-                          {% endif %}
-
-                    </div>
-
-
-<!--                        <p class="content_border">Потрясающая отмосфера что не хочется<br>-->
-<!--                            уходить! Приветливый персонал и мастера<br>-->
-<!--                            настоящие профессионалы.-->
-<!--                        </p>-->
-<!--                        <p class="content_border_name">-->
-<!--                            Мария-->
-<!--                        </p>-->
-
-
-
-<!--                    <div class="blok_knopka_otz">-->
-<!--                        <a href="" class="knopka_otz">Оставить отзыв</a>-->
-<!--                        <a class="knopka_otz_niz_text">< 14/15 ></a>-->
-<!--                    </div>-->
-
-
-                </div>
-            </div>
-        </div>
     </div>
     <!-- footer -->
     <div class="footer">

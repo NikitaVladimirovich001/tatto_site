@@ -23,6 +23,8 @@ INSTALLED_APPS = [
     'user',
     'sitetatto',
     'record',
+    'mastera',
+    'comment',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

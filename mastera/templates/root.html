@@ -1,0 +1,17 @@
+{% load static %}
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ painter.name }}</title>
+</head>
+<body>
+{% for painter in painter_list %}
+    <a href="{% url 'painter_detail' painter.id %}" class="knopka_baner_4_1">
+        <img src="{{ painter.avatar.url }}" alt="" class="hover_el_4_1">
+        <p class="text_baner_4_1">{{ painter.name }}</p>
+    </a>
+{% endfor %}
+</body>
+</html>
+
