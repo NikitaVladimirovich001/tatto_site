@@ -7,9 +7,11 @@
     <title>Мастера</title>
 </head>
 <body>
+
+    <!-- Шапка -->
     <div class="baner_Danil">
         <div class="header">
-                  <div class="container">
+            <div class="container">
                     <div class="ert">
                         <div class="header_iner">
                             <img src="{% static 'img/Logo.png' %}" alt="" class="logo"> <!--Логотип-->
@@ -26,35 +28,58 @@
                             </div>
                         </div>
                         <nav class="nav"> <!--Навигация-->
-                            <a class="nav_link" href="">Главная</a>
-                            <a class="nav_link" href="{% url 'comments' %}">Отзывы</a>
+                            <a class="nav_link" href="{% url 'home' %}">Главная</a>
+                            <a class="nav_link" href="{% url 'comment:comments' page_number=1 %}">Отзывы</a>
                             <a class="nav_link"href="{% url 'user' %}">Выход</a>
                         </nav>
                         <a href="{% url 'record' %}" class="knopka_zapis">Записаться</a>
                     </div>
         </div>
+        </div>
     </div>
 
+    <!-- Мастера -->
     <div id="baner_4">
         <img src="{% static 'img/fon_baner_4.png' %}" alt="" class="fon_4">
         <div class="container">
-            <p class="zag_baner_4">
-                Мастера
-            </p>
+            <p class="zag_baner_4">Мастера</p>
             <div class="sod_baner_4">
+
                 <div class="sod_baner_4_1">
                     {% for painter in painter_list %}
-                        <a href="{% url 'painter_detail' %}" class="knopka_baner_4_1">
+                        <a href="{% url 'painter_detail' painter_id=painter.id %}" class="knopka_baner_4_1">
                             <img src="{{ painter.avatar.url }}" alt="" class="hover_el_4_1">
                             <p class="text_baner_4_1">{{ painter.name }}</p>
                         </a>
                     {% endfor %}
                 </div>
+
+                <div class="page_box">
+
+                 {% if page_obj.has_previous %}
+                    <a class="a_pag" href="?page={{ page_obj.previous_page_number }}"><p class="page">❮</p></a>
+                    <a class="a_pag" href="?page={{ page_obj.previous_page_number }}"><p class="page">{{ page_obj.previous_page_number }}</p></a>
+                 {% endif %}
+
+                 <div class="page_style">
+                     <p class="page active">{{ page_obj.number }}</p>
+                 </div>
+
+                 {% if page_obj.has_next %}
+                    <a class="a_pag" href="?page={{ page_obj.next_page_number }}"><p class="page">{{ page_obj.next_page_number }}</p></a>
+                    <p>...</p>
+                    <a class="a_pag" href="?page={{ page_obj.next_page_number }}"><p class="page">❯</p></a>
+                 {% endif %}
+
+             </div>
+
             </div>
         </div>
     </div>
-        <div class="footer">
-            <div class="fon_footer">
+
+    <!-- Подвал сайта -->
+    <div class="footer">
+        <div class="fon_footer">
             <div class="container">
                 <div class="element">
                     <div class="lev_element">
@@ -94,6 +119,7 @@
                 </div>
             </div>
         </div>
-        </div>
+    </div>
+
 </body>
 </html>

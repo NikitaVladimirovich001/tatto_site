@@ -10,7 +10,8 @@ urlpatterns = [
     path('sitetatto/', include('sitetatto.urls')),
     path('record/', include('record.urls')),
     path('mastera/', include('mastera.urls')),
-    path('comment/', include('comment.urls', namespace='comments'), name='comment'),
+   # path('comment/', include('comment.urls')),
+    path('comment/', include(('comment.urls', 'comments'), namespace='comment')),
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 if settings.DEBUG:

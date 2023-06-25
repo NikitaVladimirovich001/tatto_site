@@ -26,8 +26,8 @@
                             </div>
                         </div>
                         <nav class="nav"> <!--Навигация-->
-                            <a class="nav_link" href="">Главная</a>
-                            <a class="nav_link" href="{% url 'mastera' %}">Мастера</a>
+                            <a class="nav_link" href="{% url 'home' %}">Главная</a>
+                            <a class="nav_link" href="{% url 'painter_list' %}">Мастера</a>
                             <a class="nav_link"href="{% url 'user' %}">Выход</a>
                         </nav>
                         <a href="{% url 'record' %}" class="knopka_zapis">Записаться</a>
@@ -35,114 +35,52 @@
         </div>
     </div>
 </div>
-
-
-<form action="" method="post"  style="display: flex; flex-direction: column; font-size: 16px; font-family: Century Gothic;">
-    {% csrf_token %}
-    {{ comment_form }}
-    <input type="submit" value="Добавить комментарий" style="margin-top: 20px;">
-</form>
-
-</div>
-
-    <div style="width: 55%;
-                padding: 30px;
-                box-shadow: 1px 1px 20px 1px #9391902b;
-                border-radius: 3px;">
-    {%for com in comments%}
-    <div style="padding: 20px;">
-        <div style="display: flex; align-items: center;">
-            <img style="width: 30px;
-                        padding: 2px;
-                        margin-right: 5px;
-                        border-radius: 50%;
-                        background-color: #f1f1f1;" src="/static/img/user.png">
-
-            <p style="font-size: 16px; color: #b33434;"><b>{{com.name}}</b> <span style="color: rgba(66, 59, 59, 0.411); font-size: 14px;">пишет:</span></p>
-        </div>
-        <p style="color: rgba(66, 59, 59, 0.411); font-size: 14px;">{{com.create_date}}</p>
-        <p style="margin-top: 10px;">{{com.text}}</p>
-        <hr style="opacity: 0.4; margin-top: 15px;">
-    </div>
-    {%endfor%}
-        <div class="page_box">
-            {% if page_comments.has_previous %}
-                <a  class="a_pag" href="{% url 'comments' page_comments.previous_page_number %}"><p class="page">❮</p></a>
-                <a  class="a_pag" href="{% url 'comments' page_comments.previous_page_number %}"><p class="page">{{ page_comments.previous_page_number}}</p></a>
-            {% endif %}
-
-            <div class="page_style">
-                <p class="page active">{{ page_comments.number }}</p>
+    <div class="center_content_comment_block">
+        <div class="verx_block">
+            <div class="prav_block">
+                    <p class="prav_mod"><b>Правила модерации комментариев</b></p>
+                    <ul class="justify">
+                        <p>- Используйте свое имя или псевдоним, чтобы оставлять комментарии. Комментарии от пользователей с названием веб-дизайн компания могут быть помечены как спам и удалены.</p>
+                        <p>- Любой комментарий, содержащий оскорбительную, грубую или ненормативную лексику, будет удален.</p>
+                        <p>- Мы приветствуем конструктивную критику, но запрещаем оскорбительную и неаргументированную критику.</p>
+                        <p>- Не размещайте комментарии, которые не имеют отношения к теме сайта или являются спамом - они будут удалены.</p>
+                        <p>- Не прикрепляйте рекламные ссылки, ссылки на ваши сайты или другие проекты - они будут удалены.</p>
+                    </ul>
             </div>
-
-            {% if page_comments.has_next %}
-                <a class="a_pag" href="{% url 'comments' page_comments.next_page_number %}"><p class="page">{{page_comments.next_page_number}}</p></a>
-                <p>...</p>
-                <a class="a_pag" href="{% url 'comments' page_comments.next_page_number %}"><p class="page">❯</p></a>
-            {% endif %}
+            <form action="" method="post"  class="form_comment">
+                    {% csrf_token %}
+                    {{ comment_form }}
+                    <input type="submit" value="Добавить комментарий" class="but">
+                </form>
+        </div>
+        <div class="comm_block">
+            {%for com in comments%}
+                <div class="comm_okno">
+                    <div class="user">
+                        <img class="img_user" src="/static/img/user_1.png">
+                        <p  class="tetx_user"><b>{{com.name}}</b> <span class="span_text_user">пишет:</span></p>
+                    </div>
+                    <p  class="text_comm_block">{{com.text}}</p>
+                    <p  class="create_date" >{{com.create_date}}</p>
+                    <hr class="line_comment">
+                </div>
+            {%endfor%}
+            <div class="page_box">
+                {% if page_obj.has_previous %}
+                    <a class="a_pag" href="{% url 'comment:comments' page_obj.previous_page_number %}"><p class="page">❮</p></a>
+                    <a class="a_pag" href="{% url 'comment:comments' page_obj.previous_page_number %}"><p class="page">{{ page_obj.previous_page_number }}</p></a>
+                {% endif %}
+                <div class="page_style">
+                    <p class="page active">{{ page_obj.number }}</p>
+                </div>
+                {% if page_obj.has_next %}
+                    <a class="a_pag" href="{% url 'comment:comments' page_obj.next_page_number %}"><p class="page">{{ page_obj.next_page_number }}</p></a>
+                    <p>...</p>
+                    <a class="a_pag" href="{% url 'comment:comments' page_obj.next_page_number %}"><p class="page"></p></a>
+                {% endif %}
+            </div>
         </div>
     </div>
-
-<!--    <div id="baner_5">-->
-<!--        <div class="fon_baner_left_5">-->
-<!--            <img src="{% static 'sitetatto/img/imf_gal.jpg' %}" alt="" class="fon_prav_5">-->
-<!--            <div class="container">-->
-<!--                <p id="center_text_baner_5">-->
-<!--                    Отзывы-->
-<!--                </p>-->
-<!--                <div class="left_content_glav">-->
-<!--                    <div class="lef_kont">-->
-<!--                        <a href="" class="knfopka_foto_master_baner_5">-->
-<!--                            <p class="foto_master_baner_5">-->
-<!--                                Фото с мастером-->
-<!--                            </p>-->
-<!--                        </a>-->
-<!--                        <a href="" class="knfopka_foto_rabot_baner_5">-->
-<!--                            <p class="foto_rabot_baner_5">-->
-<!--                                Фото работы-->
-<!--                            </p>-->
-<!--                        </a>-->
-<!--                    </div>-->
-<!--                        <div class="col-md-4">-->
-<!--                          &lt;!&ndash; # Creating comments&ndash;&gt;-->
-<!--                          <div class="blok_komment">-->
-<!--                            {% for el in comments %}-->
-<!--                                <h4>User name: {{ el.author_id }}</h4>-->
-<!--                                <p>{{ el.text }}</p>-->
-<!--                                <p>{{ el.created_at }}</p>-->
-<!--                            {% endfor %}-->
-<!--                          </div>-->
-<!--                          <div class="blok_komment">-->
-<!--                            <form method="post" class="border fixed-bottom">-->
-<!--                                {% csrf_token %}-->
-<!--                                {{ el.as_p }}-->
-<!--                              <input type="submit" value="Add comments" class="btn btn-success">-->
-<!--                            </form>-->
-<!--                          </div>-->
-<!--                        </div>-->
-
-
-
-
-<!--&lt;!&ndash;                        <p class="content_border">Потрясающая отмосфера что не хочется<br>&ndash;&gt;-->
-<!--&lt;!&ndash;                            уходить! Приветливый персонал и мастера<br>&ndash;&gt;-->
-<!--&lt;!&ndash;                            настоящие профессионалы.&ndash;&gt;-->
-<!--&lt;!&ndash;                        </p>&ndash;&gt;-->
-<!--&lt;!&ndash;                        <p class="content_border_name">&ndash;&gt;-->
-<!--&lt;!&ndash;                            Мария&ndash;&gt;-->
-<!--&lt;!&ndash;                        </p>&ndash;&gt;-->
-
-
-
-<!--&lt;!&ndash;                    <div class="blok_knopka_otz">&ndash;&gt;-->
-<!--&lt;!&ndash;                        <a href="" class="knopka_otz">Оставить отзыв</a>&ndash;&gt;-->
-<!--&lt;!&ndash;                        <a class="knopka_otz_niz_text">< 14/15 ></a>&ndash;&gt;-->
-<!--&lt;!&ndash;                    </div>&ndash;&gt;-->
-
-
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
     <div class="footer">
             <div class="fon_footer">
             <div class="container">

@@ -1,6 +1,5 @@
 from django.db import models
-from django.contrib.auth.models import User
-import datetime
+
 
 class Painter(models.Model): # Тату-мастер
     name = models.CharField(max_length=64, verbose_name="Мастер")
@@ -23,20 +22,7 @@ class Image(models.Model): # Изображения к которым привя
 
     class Meta():
         verbose_name = 'Изображение'
-        verbose_name_plural = 'Изображении'
+        verbose_name_plural = 'Изображения'
 
     def __str__(self):
         return self.name
-
-class Comment(models.Model): # Коментарий
-    author_id = models.ForeignKey(User, on_delete=models.CASCADE)
-    text = models.TextField(verbose_name="Текст комментария")
-    created_at = models.DateTimeField(auto_now_add=True, verbose_name="Дата создания")
-
-    class Meta():
-        ordering = ["-id"]
-        verbose_name = 'Комментарий'
-        verbose_name_plural = 'Комментарии'
-
-    def __str__(self):
-        return (self.text[:20] + "...")

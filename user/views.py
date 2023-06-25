@@ -6,6 +6,7 @@ from django.urls import reverse
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 
+@login_required
 def user(request):# Авторизация
     if request.method == 'POST':
         form = UserLoginForm(data=request.POST)

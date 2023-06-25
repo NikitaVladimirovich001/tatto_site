@@ -2,8 +2,6 @@ from django.shortcuts import render, redirect
 from django.views.generic import ListView
 from sitetatto.forms import PaintersFilterForm
 from sitetatto.models import Painter, Image
-from .models import Comment
-from .forms import CommentForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 
@@ -15,23 +13,11 @@ def tatto(request): # доп страница информации
 def removal(request): # доп страница информации
     return render(request, 'removal.html')
 
+@login_required
 def correction(request): # доп страница информации
     return render(request, 'correction.html')
 
-@login_required # комментарии
-def сomment(request):
-    comment = Comment.objects.all()
-    if request.method == "POST":
-        form = CommentForm(request.POST)
-        if form.is_valid():
-            form.save()
-            form = CommentForm()
-
-    else:
-        form = CommentForm()
-    return render(request,'index.html', {'comments':comment, 'comment_form':form})
-
-class PaintersList(ListView):
+class PaintersList(LoginRequiredMixin, ListView):
     model = Painter
     context_object_name = 'painter_list'
     template_name = 'index.html'
@@ -57,9 +43,7 @@ class PainterListView(LoginRequiredMixin, ListView): # Вывод списка �
             result['form'] = form
             return result
 
-
-
-class Search(ListView):
+class Search(LoginRequiredMixin, ListView):
     template_name = 'index.html'
     context_object_name = 'image_list'
     paginate_by = 6

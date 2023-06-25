@@ -12,7 +12,7 @@
     <title>Тату студия Диониса Пахомова</title>
 </head>
 <body>
-
+    <!-- Шапка -->
     <img src="{% static 'sitetatto/img/fon_baner_1.jpg' %}" alt="" class="fon_1">
     <header class="header"> <!--Банер 1-->
             <div class="container">
@@ -22,8 +22,8 @@
                         <a class="nav_link" href="">Главная</a>
                         <a class="nav_link" href="#baner_2">Услуги</a>
                         <a class="nav_link" href="#baner_3">Галерея</a>
-                        <a class="nav_link" href="{% url 'mastera' %}">Мастера</a>
-                        <a class="nav_link" href="{% url 'comments' page_number=1' %}">Отзывы</a>
+                        <a class="nav_link" href="{% url 'painter_list' %}">Мастера</a>
+                        <a class="nav_link" href="{% url 'comment:comments' page_number=1 %}">Отзывы</a>
                         <a class="nav_link"href="{% url 'user' %}">Выход</a>
                     </nav>
                 </div>
@@ -75,9 +75,10 @@
                 </div>
             </div>
     </header>
-    <!-- Банер 2 -->
-        <img src="{% static 'sitetatto/img/fon_baner_2.png' %}" alt="" class="fon_2">
-        <div class="container">
+
+    <!-- Услуги -->
+    <img src="{% static 'sitetatto/img/fon_baner_2.png' %}" alt="" class="fon_2">
+    <div class="container">
             <div id="baner_2"></div>
                 <p class="zag_baner_2">
                     УСЛУГИ
@@ -110,7 +111,7 @@
                 </div>
         </div>
 
-    <!-- Банер 3 -->
+    <!-- Галерея -->
     <div id="baner_3">
         <div class="fon_baner_3">
             <div class="zag_baner_3">Галерея</div>
@@ -119,9 +120,7 @@
                     <div class="blok_nav_and_gal">
                         <div class="content_nav_baner_3">
                             <div class="verx_nav">
-                                <div class="zagolovok_filtr">
-                                    <p class="zag_masera">Мастера</p>
-                                </div>
+                                <div class="zagolovok_filtr"><p class="zag_masera">Мастера</p></div>
                                 <div class="filtr">
                                     <div class="left_filter">
                                         <form class="form_search" action="{% url 'search' %}" method="get">
@@ -142,23 +141,30 @@
                                 {% endfor %}
                             </div>
                         </div>
-
-                            <div class="galer_ban_3">
-                                <div class="block_gal_1">
-                                    {% if image_list.has_previous %}
-                                         <a href="?page={{ image_list.previous_page_number }}" class="pagination__button">&lt;</a>
-                                    {% endif %}
-
+                         <div class="galer_ban_3">
+                            <div class="block_gal_1">
                                 {% for image in image_list %}
                                     <a href="{{image.image.url}}" data-lightbox="lbox" style="text-decoration: none;">
                                         <img src="{{image.image.url}}" alt="" class="img_1_gal">
                                     </a>
                                 {% endfor %}
-
-                                {% if image_list.has_next %}
-                                    <a href="?page={{ image_list.next_page_number }}" class="pagination__button">&gt;</a>
+                            </div>
+                            <div class="page_box">
+                                {% if page_obj.has_previous %}
+                                    <a class="a_pag" href="?page={{ page_obj.previous_page_number }}"><p class="page">❮</p></a>
+                                    <a class="a_pag" href="?page={{ page_obj.previous_page_number }}"><p class="page">{{ page_obj.previous_page_number }}</p></a>
                                 {% endif %}
+
+                                <div class="page_style">
+                                    <p class="page active">{{ page_obj.number }}</p>
                                 </div>
+
+                                {% if page_obj.has_next %}
+                                    <a class="a_pag" href="?page={{ page_obj.next_page_number }}"><p class="page">{{ page_obj.next_page_number }}</p></a>
+                                    <p>...</p>
+                                    <a class="a_pag" href="?page={{ page_obj.next_page_number }}"><p class="page">❯</p></a>
+                                {% endif %}
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -166,7 +172,6 @@
         </div>
     </div>
 
-    </div>
     <!-- footer -->
     <div class="footer">
         <div class="fon_footer">

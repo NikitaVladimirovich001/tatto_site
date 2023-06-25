@@ -3,6 +3,8 @@ from django.core.paginator import Paginator
 from .forms import *
 
 """страница отзывы"""
+
+
 def comment_view(request, page_number=1):
     context = {}
     comments = Comments.objects.all()
@@ -23,5 +25,4 @@ def comment_view(request, page_number=1):
             page_obj = paginator.page(1)
         else:
             page_obj = paginator.page(paginator.num_pages)
-    return render(request, 'comment.html',
-                  {'comments': comments, 'comment_form': form, 'page_comments': page_obj}, )
+    return render(request, 'comment.html', {'comments': page_obj, 'comment_form': form, 'page_obj': page_obj})

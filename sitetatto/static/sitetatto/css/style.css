@@ -59,11 +59,6 @@ h1, h2, h3, h4, h5 {
     margin-left: -24px;
 }
 
-
-.cont {
-
-}
-
 /* Фон 1 */
 .fon_1 {
     margin-top: -17px;
@@ -672,6 +667,58 @@ h1, h2, h3, h4, h5 {
 }
 
 /* Банер 5 */
+.page{
+    width: 35px;
+    height: 35px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.page:hover{
+    color: rgb(255, 255, 255);
+    background-color: #2d1b1ba2;
+    width: 35px;
+    height: 35px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.41s;
+}
+.a_pag{
+    text-decoration: none;
+    padding: 5px;
+    width: 35px;
+    height: 35px;
+}
+.page_box{
+    display: flex;
+    align-items: center;
+    padding: 0px 10px 0px 10px;
+    margin-top: -15px;
+    margin-left: -97px;
+    margin-bottom: 30px;
+    justify-content: center;
+    width: 100%;
+}
+.active{
+    color: rgb(255, 255, 255);
+    font-family: Century Gothic;
+}
+.page_box a{
+    color: #e57025;
+}
+.page_style{
+    width: 35px;
+    height: 35px;
+    border-radius: 3px;
+    background-color: #2d1b1b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .baner_5{
     width: 1920px;
     height: 900px;

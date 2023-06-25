@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from sitetatto.models import Painter, Image, Comment
+from sitetatto.models import Painter, Image
 
 
 @admin.register(Painter)
@@ -11,8 +11,4 @@ class PainterAdmin(admin.ModelAdmin):
 class ImageAdmin(admin.ModelAdmin):
     exclude = ('id',)
 
-class CommentAdmin(admin.ModelAdmin):
-    exclude = ('id',)
-
-admin.site.register(Comment, CommentAdmin)
 
